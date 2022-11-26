@@ -18,6 +18,13 @@ app.get("/", function (request, response) {
 });
 
 //START OF YOUR CODE...
+app.get("/quotes", function (req, res) {
+    res.send(quotes);
+  });
+
+app.get("/quotes/random", function (req, res) {
+    res.send(pickFromArray(quotes));
+  });
 
 //...END OF YOUR CODE
 
@@ -30,7 +37,7 @@ function pickFromArray(arr) {
 }
 
 //Start our server so that it listens for HTTP requests!
-let port = 5000;
+let port = 5001;
 
 app.listen( port, function () {
   console.log("Your app is listening on port " + port);
